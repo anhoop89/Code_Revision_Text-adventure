@@ -106,7 +106,7 @@ function window_check(
   return open_check;
 }
 
-function check_key(key: Boolean ) : Boolean {
+function check_key(key: Boolean): Boolean {
   if (key) {
     console.error("You already have the key.");
   } else {
