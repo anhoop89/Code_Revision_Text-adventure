@@ -10,6 +10,14 @@ function input_name(): string {
     name = prompt("Please enter your name.");
   }
   console.log(name);
+  
+  console.info("Hello, " + name + ".");
+
+  console.info("You are in a building. Your goal is to exit this building.");
+  console.info(
+    "You are in an empty room. There are doors on the south and east walls of this room."
+  );
+
   return name;
 }
 
@@ -103,13 +111,6 @@ export function play(): void {
     "Welcome to the text adventure! Open your browser's developer console to play."
   );
   let playerName = input_name();
-
-  console.info("Hello, " + playerName + ".");
-
-  console.info("You are in a building. Your goal is to exit this building.");
-  console.info(
-    "You are in an empty room. There are doors on the south and east walls of this room."
-  );
 
   let currentRoom: Room = "A";
   let hasKey: boolean = false;
