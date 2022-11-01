@@ -23,4 +23,4 @@ Here is the shortest sequence of winning moves:
 3. `west`
 4. `south`
 5. `open window`
-6. `east`
+6. `east`# quiz5_HW_CS410P_code_review
