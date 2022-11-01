@@ -10,7 +10,7 @@ function input_name(): string {
     name = prompt("Please enter your name.");
   }
   console.log(name);
-  
+
   console.info("Hello, " + name + ".");
 
   console.info("You are in a building. Your goal is to exit this building.");
@@ -95,7 +95,7 @@ function window_check(
   command_check: string,
   open_check: boolean
 ): boolean {
-  if (room_check == "C" && command_check == "open window"){
+  if (room_check == "C" && command_check == "open window") {
     if (open_check) {
       console.error("The window is already open.");
     } else {
@@ -106,12 +106,21 @@ function window_check(
   return open_check;
 }
 
+function check_key(key: Boolean ) : Boolean {
+  if (key) {
+    console.error("You already have the key.");
+  } else {
+    console.info("You take the key from the table.");
+    key = true;
+  }
+  return key;
+}
 export function play(): void {
   console.info(
     "Welcome to the text adventure! Open your browser's developer console to play."
   );
-  let playerName = input_name();
 
+  let playerName = input_name();
   let currentRoom: Room = "A";
   let hasKey: boolean = false;
   let windowOpen: boolean = false;
@@ -139,12 +148,7 @@ export function play(): void {
             currentRoom = check_room_key(currentRoom, command, hasKey);
             break;
           case "take key":
-            if (hasKey) {
-              console.error("You already have the key.");
-            } else {
-              console.info("You take the key from the table.");
-              hasKey = true;
-            }
+            if (check_key(hasKey)) hasKey = true;
             break;
           default:
             console.error("Unrecognized command.");
