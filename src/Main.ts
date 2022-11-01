@@ -135,10 +135,6 @@ export function play(): void {
       case "B":
         switch (command) {
           case "west":
-            // currentRoom = "A";
-            // console.info(
-            //   "You are in an empty room. There are doors on the south and east walls of this room."
-            // );
             currentRoom = check_room_key(currentRoom, command, hasKey);
             break;
           case "take key":
@@ -148,7 +144,6 @@ export function play(): void {
               console.info("You take the key from the table.");
               hasKey = true;
             }
-            //  currentRoom = check_room_key(currentRoom, command, hasKey);
             break;
           default:
             console.error("Unrecognized command.");
@@ -159,28 +154,12 @@ export function play(): void {
       case "C":
         switch (command) {
           case "north":
-            // currentRoom = "A";
-            // console.info(
-            //   "You are in an empty room. There are doors on the south and east walls of this room."
-            // );
             currentRoom = check_room_key(currentRoom, command, hasKey);
             break;
           case "east":
-            // if (windowOpen) {
-            //   currentRoom = "Exit";
-            //   console.info("You step out from the open window.");
-            // } else {
-            //   console.error("The window is closed.");
-            // }
             currentRoom = check_room_key(currentRoom, command, windowOpen);
             break;
           case "open window":
-            // if (windowOpen) {
-            //   console.error("The window is already open.");
-            // } else {
-            //   console.info("You open the window.");
-            //   windowOpen = true;
-            // }
             windowOpen = window_check(currentRoom, command, windowOpen);
             break;
           default:
